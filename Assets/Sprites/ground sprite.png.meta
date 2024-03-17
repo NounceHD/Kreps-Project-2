@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ground
+      name: ground_top
       rect:
         serializedVersion: 2
         x: 48
@@ -164,6 +164,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ground_under
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 109
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905ba4acf19788f48b4604a389f20419
+      internalID: 192337674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -175,7 +196,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ground: 812249989
+      ground_top: 812249989
+      ground_under: 192337674
       island: 570596207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
