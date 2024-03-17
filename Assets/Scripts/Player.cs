@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 4.5f;
     [SerializeField] private float jumpForce = 6f;
+    [SerializeField] private TMP_Text coinLabel;
+
+    private int coins = 0;
 
     private Rigidbody2D body;
     private Animator animator;
@@ -81,5 +85,11 @@ public class Player : MonoBehaviour
     void Kill()
     {
         Debug.Log("player has died");
+    }
+
+    public void CollectCoin()
+    {
+        coins += 1;
+        coinLabel.text = coins.ToString();
     }
 }
