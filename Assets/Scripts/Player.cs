@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 4.5f;
     [SerializeField] private float jumpForce = 6f;
     [SerializeField] private TMP_Text coinLabel;
+    [SerializeField] private GameObject wonText;
     [SerializeField] private GameObject goldenPlatform;
     [SerializeField] private GameObject boss;
 
@@ -89,9 +90,14 @@ public class Player : MonoBehaviour
         }
 
         GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-        if (!enemy)
+        if (!enemy && boss)
         {
             boss.SetActive(true);
+        }
+
+        if (!boss)
+        {
+            Win();
         }
     }
 
@@ -110,5 +116,10 @@ public class Player : MonoBehaviour
         {
             goldenPlatform.SetActive(true);
         }
+    }
+
+    private void Win() {
+        wonText.SetActive(true);
+        alive = false;
     }
 }

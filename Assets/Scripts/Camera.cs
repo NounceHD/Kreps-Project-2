@@ -12,7 +12,7 @@ public class Camera : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (target.transform.position.y > -1)
+        if (target && target.transform.position.y > -1)
         {
         targetPosition = new(target.position.x, target.position.y, transform.position.z);
         }
