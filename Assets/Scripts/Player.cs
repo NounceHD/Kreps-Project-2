@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpForce = 6f;
     [SerializeField] private TMP_Text coinLabel;
     [SerializeField] private GameObject goldenPlatform;
+    [SerializeField] private GameObject boss;
 
     private int coins = 0;
     private bool alive = true;
@@ -85,6 +86,12 @@ public class Player : MonoBehaviour
         if (transform.position.y <= -10)
         {
             Destroy(gameObject);
+        }
+
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        if (!enemy)
+        {
+            boss.SetActive(true);
         }
     }
 

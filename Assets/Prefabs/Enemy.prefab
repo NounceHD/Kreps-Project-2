@@ -124,6 +124,7 @@ MonoBehaviour:
   maxMove: 10
   speed: 3
   jumpForce: 4
+  health: 1
 --- !u!50 &5631666417623101491
 Rigidbody2D:
   serializedVersion: 4

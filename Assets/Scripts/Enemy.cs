@@ -9,12 +9,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float maxMove = 10f;
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 4f;
+    [SerializeField] private float health = 1f;
 
     private Vector3 startPos;
     private float direction = 1f;
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
     private bool alive = true;
+    private Animator animator;
 
 
     void Start()
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         startPos = transform.position;
         boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -79,11 +82,21 @@ public class Enemy : MonoBehaviour
         {
             Vector2 contact = collision.GetContact(0).normal;
             if (contact.x == 0) {
-                Kill();
+                Hurt(1);
             } else
             {
                 player.Kill();
             }
+        }
+    }
+
+    private void Hurt(int amount)
+    {
+        animator.Play("boss_hurt");
+        health -= amount;
+        if (health <= 0)
+        {
+            Kill();
         }
     }
 }
